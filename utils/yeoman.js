@@ -43,7 +43,7 @@ let getAllSettingsFromComponentName = (componentName, style, useCssModules, isPu
   let cleanedPaths = getCleanedPathName(componentName);
   let componentParts = cleanedPaths.split('/');
   let componentBaseName = _.capitalize(componentParts.pop());
-  let componentPartPath = componentParts.join('/');
+  let componentPartPath = componentParts.map((componentPart) => changeCase.paramCase(componentPart)).join('/');
 
   // Get the components displayName property
   let componentFullName = _.classify(_.replaceAll(componentName, '/', '_'));
@@ -135,7 +135,7 @@ let getCleanedPathName = (path, suffix) => {
 
   // Build the full components name
   return pathArray.map((path) => {
-    return changeCase.paramCase(path);
+    return _.camelize(_.slugify(_.humanize(path)));
   }).join('/') + _.capitalize(suffix);
 };
 
