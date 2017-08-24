@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "change-case": "^3.0.1",
     "coveralls": "^2.11.12",
     "fs-extra": "^0.30.0",
     "istanbul": "^0.4.5",

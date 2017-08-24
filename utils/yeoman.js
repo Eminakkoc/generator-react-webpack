@@ -4,6 +4,7 @@ const path = require('path');
 const configUtils = require('./config');
 const _ = require('underscore.string');
 const C = require('./constants');
+const changeCase = require('change-case')
 
 // Needed directory paths
 const baseName = path.basename(process.cwd());
@@ -66,7 +67,7 @@ let getAllSettingsFromComponentName = (componentName, style, useCssModules, isPu
         style: {
           webpackPath: `./${componentBaseName.toLowerCase()}${useCssModules ? '.cssmodule' : ''}${styleSettings.suffix}`,
           path: path.normalize(`${componentPath.path}/${componentPartPath}/`),
-          fileName: `${componentBaseName.toLowerCase()}${useCssModules ? '.cssmodule' : ''}${styleSettings.suffix}`,
+          fileName: `${changeCase.paramCase(componentBaseName).toLowerCase()}${useCssModules ? '.cssmodule' : ''}${styleSettings.suffix}`,
           className: getComponentStyleName(cssClsPrefix + componentBaseName),
           suffix: styleSettings.suffix
         },
@@ -134,7 +135,7 @@ let getCleanedPathName = (path, suffix) => {
 
   // Build the full components name
   return pathArray.map((path) => {
-    return _.slugify(path);
+    return _.camelize(_.slugify(_.humanize(path)));
   }).join('/') + _.capitalize(suffix);
 };
 
@@ -144,8 +145,8 @@ let getCleanedPathName = (path, suffix) => {
  * @return {String}
  */
 let getComponentStyleName = (path) => {
-  let fileName = path.split('/').pop().toLowerCase();
-  return _.slugify(_.humanize(fileName)) + '-container';
+  let fileName = path.split('/').pop();
+  return changeCase.paramCase(fileName) + '-container';
 };
 
 /**
