@@ -55,7 +55,7 @@ let getAllSettingsFromComponentName = (componentName, style, useCssModules, isPu
   let componentPath = configUtils.getChoiceByKey('path', 'component');
 
   // Configure tests
-  let testPath = configUtils.getChoiceByKey('path', 'test');
+  let testPath = configUtils.getChoiceByKey('path', 'tests');
 
   let settings;
 
