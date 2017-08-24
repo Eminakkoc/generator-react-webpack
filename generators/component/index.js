@@ -74,7 +74,7 @@ class ComponentGenerator extends Generators.Base {
 
   configuring() {
     // Read the requested major version or default it to the latest stable
-    this.generatorVersion = this.config.get('generatedWithVersion') || 3;
+    this.generatorVersion = this.config.get('generatedWithVersion') || 4;
 
     if (!C.SUPPORTED_GEN_VERSIONS.some(x => x === this.generatorVersion)) {
       this.env.error('Unsupported generator version');

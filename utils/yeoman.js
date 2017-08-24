@@ -30,7 +30,7 @@ let getAllSettingsFromComponentName = (componentName, style, useCssModules, isPu
 
   // Use css per default
   if(!style) {
-    style = 'css';
+    style = 'scss';
   }
 
   // Use version 3 fallback as default for projects
@@ -145,7 +145,7 @@ let getCleanedPathName = (path, suffix) => {
  */
 let getComponentStyleName = (path) => {
   let fileName = path.split('/').pop().toLowerCase();
-  return _.slugify(_.humanize(fileName)) + '-component';
+  return _.slugify(_.humanize(fileName)) + '-container';
 };
 
 /**

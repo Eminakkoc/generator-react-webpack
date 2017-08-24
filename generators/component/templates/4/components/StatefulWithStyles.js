@@ -1,5 +1,4 @@
 import React from 'react';
-import '<%= style.webpackPath %>';
 
 class <%= component.className %> extends <%= component.classBase %> {
 
@@ -12,7 +11,6 @@ class <%= component.className %> extends <%= component.classBase %> {
   }
 }
 
-<%= component.className %>.displayName = '<%= component.displayName %>';
 <%= component.className %>.propTypes = {};
 <%= component.className %>.defaultProps = {};
 
