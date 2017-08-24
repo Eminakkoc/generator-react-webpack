@@ -1,6 +1,10 @@
 import React from 'react';
 
 class <%= component.className %> extends <%= component.classBase %> {
+  constructor(props) {
+	super(props);
+	this.state = {};
+  }
 
   render() {
     return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import '<%= style.webpackPath %>';
 
 const <%= component.className %> = () => (
   <div className="<%= style.className %>">
@@ -7,7 +6,6 @@ const <%= component.className %> = () => (
   </div>
 );
 
-<%= component.className %>.displayName = '<%= component.displayName %>';
 <%= component.className %>.propTypes = {};
 <%= component.className %>.defaultProps = {};
 
