@@ -135,7 +135,7 @@ let getCleanedPathName = (path, suffix) => {
 
   // Build the full components name
   return pathArray.map((path) => {
-    return _.camelize(_.slugify(_.humanize(path)));
+    return changeCase.paramCase(path);
   }).join('/') + _.capitalize(suffix);
 };
 
