@@ -31,7 +31,7 @@
       },
       {
         "name": "test",
-        "path": "test"
+        "path": "tests"
       },
       {
         "name": "dist",
