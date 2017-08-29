@@ -72,13 +72,13 @@ let getAllSettingsFromComponentName = (componentName, style, useCssModules, isPu
           suffix: styleSettings.suffix
         },
         component: {
-          webpackPath: path.normalize(`components/${componentPartPath}/${componentBaseName}.js`),
+          webpackPath: path.normalize(`components/${componentPartPath}/${componentBaseName}.jsx`),
           path: path.normalize(`${componentPath.path}/${componentPartPath}/`),
-          fileName: `${componentBaseName}.js`,
+          fileName: `${componentBaseName}.jsx`,
           className: `${componentBaseName}`,
           classBase: isPure ? 'React.PureComponent' : 'React.Component',
           displayName: `${componentFullName}`,
-          suffix: '.js'
+          suffix: '.jsx'
         },
         test: {
           path: path.normalize(`${testPath.path}/components/${componentPartPath}/`),
@@ -187,7 +187,7 @@ let getDestinationPath = (name, type, suffix) => {
   parts.push(actionBaseName);
   let fullPath = parts.join('/');
 
-  return `${fullPath}.js`;
+  return `${fullPath}.jsx`;
 };
 
 /**
@@ -200,7 +200,7 @@ let getDestinationPath = (name, type, suffix) => {
 let getDestinationClassName = (name, type, suffix) => {
 
   let fixedName = getDestinationPath(name, type, suffix);
-  return _.capitalize(fixedName.split('/').pop().split('.js')[0]);
+  return _.capitalize(fixedName.split('/').pop().split('.jsx')[0]);
 };
 
 /**
